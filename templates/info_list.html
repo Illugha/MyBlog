@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <h1>Тут усі пости x_x</h1>
+</head>
+<body>
+    <h2>Пости</h2>
+    <ul>
+        {% for post in posts_list %}
+            <div>
+                <h3>Назва: {{ post.title }}</h3>
+                <h3>Опубліковано: {{ post.published_date }}</h3>
+                <h3>Автор: {{ post.author }}</h3>
+                <h2>----------------------------------------------</h2>
+            </div>
+        {% empty %}
+            <li>Пости відсутні.</li>
+        {% endfor %}
+    </ul>
+
+    <h1><b>--------------------------------------------------------------------------------------------------------------------</b></h1>
+
+    <h2>Автори</h2>
+    <ul>
+        {% for author in authors_list %}
+            <div>
+                <h3>Ім'я: {{ author.name }}</h3>
+                <h3>Біографія: {{ author.bio }}</h3>
+                <h2>----------------------------------------------</h2>
+            </div>
+        {% empty %}
+            <li>Автори відсутні.</li>
+        {% endfor %}
+</body>
+</html>
